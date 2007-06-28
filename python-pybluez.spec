@@ -11,6 +11,7 @@ Source0:	http://org.csail.mit.edu/pybluez/release/%{realname}-src-%{version}.tar
 # Source0-md5:	49c8bdd5d8def11df40ce3a84b7ab839
 Url:		http://org.csail.mit.edu/pybluez/
 BuildRequires:	bluez-libs-devel
+BuildRequires:	pydoc
 BuildRequires:	python-devel
 BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq  python-libs
@@ -39,6 +40,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_postclean
 cp -r examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+./doc/gendoc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,3 +50,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{py_sitedir}/_bluetooth.so
 %{py_sitedir}/*.py[co]
 %{_examplesdir}/%{name}-%{version}
+%doc doc/*.html
