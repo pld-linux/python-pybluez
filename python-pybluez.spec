@@ -29,6 +29,7 @@ Pakiet pybluez zawiera moduły Pythona do obsługi urządzeń Bluetooth.
 %{__python} setup.py build
 
 %install
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--install-purelib=%{py_sitedir}
@@ -36,6 +37,7 @@ Pakiet pybluez zawiera moduły Pythona do obsługi urządzeń Bluetooth.
 %py_comp $RPM_BUILD_ROOT%{py_sitedir}
 %py_ocomp $RPM_BUILD_ROOT%{py_sitedir}
 %py_postclean
+cp -r examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -44,3 +46,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{py_sitedir}/_bluetooth.so
 %{py_sitedir}/*.py[co]
+%{_examplesdir}/%{name}-%{version}
