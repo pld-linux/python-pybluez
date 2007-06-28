@@ -10,6 +10,7 @@ Group:		Libraries/Python
 Source0:	http://org.csail.mit.edu/pybluez/release/%{realname}-src-%{version}.tar.gz
 # Source0-md5:	49c8bdd5d8def11df40ce3a84b7ab839
 Url:		http://org.csail.mit.edu/pybluez/
+BuildRequires:	bluez-libs-devel
 BuildRequires:	python-devel
 BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	bluez
