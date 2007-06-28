@@ -13,7 +13,8 @@ Url:		http://org.csail.mit.edu/pybluez/
 BuildRequires:	bluez-libs-devel
 BuildRequires:	python-devel
 BuildRequires:	rpmbuild(macros) >= 1.219
-Requires:	bluez
+%pyrequires_eq  python-libs
+Requires:	bluez-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
