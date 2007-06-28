@@ -1,6 +1,7 @@
-%define realname pybluez
-Summary:	Python modules for wrappers around system Bluetooth resources.
-Summary(pl.UTF-8):	Moduły Pythona do obsługi urządzeń Bluetooth.
+%define 	realname 	pybluez
+#
+Summary:	Python modules for wrappers around system Bluetooth resources
+Summary(pl.UTF-8):	Moduły Pythona do obsługi urządzeń Bluetooth
 Name:		python-%{realname}
 Version:	0.9.2
 Release:	0.1
@@ -10,6 +11,7 @@ Source0:	http://org.csail.mit.edu/pybluez/release/%{realname}-src-%{version}.tar
 # Source0-md5:	49c8bdd5d8def11df40ce3a84b7ab839
 Url:		http://org.csail.mit.edu/pybluez/
 BuildRequires:	python-devel
+BuildRequires:	rpmbuild(macros) >= 1.219
 Requires:	bluez
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -17,7 +19,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The pybluez contains Python modules for wrappers around system Bluetooth resources.
 
 %description -l pl.UTF-8
-Pakiet pybluez zawiera moduły Pythona do obsługi urządzeń Bluetooth..
+Pakiet pybluez zawiera moduły Pythona do obsługi urządzeń Bluetooth.
 
 %prep
 %setup -q -n %{realname}-%{version}
