@@ -4,7 +4,7 @@ Summary:	Python modules for wrappers around system Bluetooth resources
 Summary(pl.UTF-8):	Moduły Pythona do obsługi urządzeń Bluetooth
 Name:		python-%{realname}
 Version:	0.9.2
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://org.csail.mit.edu/pybluez/release/%{realname}-src-%{version}.tar.gz
