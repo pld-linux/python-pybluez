@@ -19,7 +19,8 @@ Requires:	bluez-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The pybluez contains Python modules for wrappers around system Bluetooth resources.
+The pybluez contains Python modules for wrappers around system
+Bluetooth resources.
 
 %description -l pl.UTF-8
 Pakiet pybluez zawiera moduły Pythona do obsługi urządzeń Bluetooth.
@@ -47,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc doc/*.html
 %attr(755,root,root) %{py_sitedir}/_bluetooth.so
 %{py_sitedir}/*.py[co]
 %{_examplesdir}/%{name}-%{version}
-%doc doc/*.html
