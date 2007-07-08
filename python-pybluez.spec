@@ -5,17 +5,16 @@ Summary(pl.UTF-8):	Moduły Pythona do obsługi urządzeń Bluetooth
 Name:		python-%{realname}
 Version:	0.9.2
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Libraries/Python
 Source0:	http://org.csail.mit.edu/pybluez/release/%{realname}-src-%{version}.tar.gz
 # Source0-md5:	49c8bdd5d8def11df40ce3a84b7ab839
 Url:		http://org.csail.mit.edu/pybluez/
 BuildRequires:	bluez-libs-devel
 BuildRequires:	pydoc
-BuildRequires:	python-devel
+BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpmbuild(macros) >= 1.219
-%pyrequires_eq  python-libs
-Requires:	bluez-libs
+%pyrequires_eq	python-libs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,7 +47,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/*.html
+%doc CHANGELOG README doc/*.html
 %attr(755,root,root) %{py_sitedir}/_bluetooth.so
-%{py_sitedir}/*.py[co]
+%{py_sitedir}/bluetooth.py[co]
+%{py_sitedir}/PyBluez-*.egg-info
 %{_examplesdir}/%{name}-%{version}
